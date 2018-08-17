@@ -17,8 +17,8 @@ public class GameHandler {
     public Socket socket;
     GameHandler gameHandler;
     public MessageHandler messageHandler;
-    public GridStatus[][] userBoard;
-    public GridStatus[][] guessesBoard;
+    public String[][] userBoard;
+    public String[][] guessesBoard;
 
     public GameHandler(Socket socket, BufferedWriter bw, BufferedReader br, String host){
         this.socket = socket;
@@ -64,12 +64,12 @@ public class GameHandler {
     }
 
     private void fillBoardsWithEmpty(){
-        userBoard = new GridStatus[BOARD_SIZE][BOARD_SIZE];
-        guessesBoard = new GridStatus[BOARD_SIZE][BOARD_SIZE];
+        userBoard = new String[BOARD_SIZE][BOARD_SIZE];
+        guessesBoard = new String[BOARD_SIZE][BOARD_SIZE];
         for(int row = 0; row < BOARD_SIZE; row++){
             for(int col = 0; col < BOARD_SIZE; col++){
-                userBoard[row][col] = GridStatus.Empty;
-                guessesBoard[row][col] = GridStatus.Empty;
+                userBoard[row][col] = "Empty";
+                guessesBoard[row][col] = "Empty";
             }
         }
     }
@@ -81,9 +81,21 @@ public class GameHandler {
         int col = Integer.parseInt(String.valueOf(c));
         int shipLength = Ship.getShipLength(shipName);
         if(shipOrientation.equals("vertical")){
-
+            int count = 0;
+            int actualRow = row;
+            while(count < shipLength){
+                userBoard[actualRow][col] = shipName;
+                count++;
+                actualRow++;
+            }
         }else{
-
+            int count = 0;
+            int actualCol = row;
+            while(count < shipLength){
+                userBoard[row][actualCol] = shipName;
+                count++;
+                actualCol++;
+            }
         }
 
 
