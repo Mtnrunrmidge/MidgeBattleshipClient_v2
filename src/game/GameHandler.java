@@ -100,9 +100,6 @@ public class GameHandler {
 
 
     }
-    private void disableAllComponents(){
-
-    }
 
     public void shipHasBeenSunk(String sunkenShipName){
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d26852ff-23e8-472a-9240-586bb10e8125" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/game/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game_Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game_Client.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game_Client.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game_Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3283">
-              <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+            <state relative-caret-position="251">
+              <caret line="288" column="46" lean-forward="true" selection-start-line="288" selection-start-column="46" selection-end-line="288" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7547#7548#0" expanded="true" />
@@ -42,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/GameHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="96" column="28" lean-forward="true" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+            <state relative-caret-position="51">
+              <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,6 +124,7 @@
       <find>gt</find>
       <find>disconnect</find>
       <find>game</find>
+      <find>png</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,8 +149,8 @@
         <option value="$PROJECT_DIR$/src/game/Client_Main.java" />
         <option value="$PROJECT_DIR$/src/game/Main.java" />
         <option value="$PROJECT_DIR$/src/game/Ship.java" />
-        <option value="$PROJECT_DIR$/src/game/Game_Client.java" />
         <option value="$PROJECT_DIR$/src/game/GameHandler.java" />
+        <option value="$PROJECT_DIR$/src/game/Game_Client.java" />
       </list>
     </option>
   </component>
@@ -193,6 +195,13 @@
               <item name="MidgeBattleshipClient_v2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MidgeBattleshipClient_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MidgeBattleshipClient_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MidgeBattleshipClient_v2" type="b2602c69:ProjectViewProjectNode" />
@@ -266,12 +275,12 @@
       <updated>1534195359129</updated>
       <workItem from="1534195362554" duration="18949000" />
       <workItem from="1534377056819" duration="10666000" />
-      <workItem from="1534467799921" duration="1940000" />
+      <workItem from="1534467799921" duration="3500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31555000" />
+    <option name="totallyTimeSpent" value="33115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="23" width="1400" height="772" extended-state="0" />
@@ -607,26 +616,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3283">
-          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="251">
+          <caret line="288" column="46" lean-forward="true" selection-start-line="288" selection-start-column="46" selection-end-line="288" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7547#7548#0" expanded="true" />
             <element signature="e#7577#7578#0" expanded="true" />
             <element signature="e#7917#7918#0" expanded="true" />
             <element signature="e#7982#7983#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="96" column="28" lean-forward="true" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

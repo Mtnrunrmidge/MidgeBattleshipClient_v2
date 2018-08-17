@@ -19,6 +19,18 @@ public class Game_Client extends JFrame{
     private JRadioButton shipHorizontalBox;
     private JButton startNewGame;
 
+    private JLabel userbattleship;
+    private JLabel usercarrier;
+    private JLabel usercruiser;
+    private JLabel usersubmarine;
+    private JLabel userdestroyer;
+
+    private JLabel oppbattleship;
+    private JLabel oppcruiser;
+    private JLabel oppcarrier;
+    private JLabel oppsubmarine;
+    private JLabel oppdestroyer;
+
     //main menu elements
     private JPanel mainPanel;
 
@@ -107,11 +119,11 @@ public class Game_Client extends JFrame{
         JPanel opponentShipsPanel = new JPanel(new GridLayout(5, 1));
         opponentShipsPanel.setPreferredSize(new Dimension(200, 350));
 
-        JLabel oppbattleship = new JLabel();
-        JLabel oppcarrier = new JLabel();
-        JLabel oppcruiser = new JLabel();
-        JLabel oppsubmarine = new JLabel();
-        JLabel oppdestroyer= new JLabel();
+        oppbattleship = new JLabel();
+        oppcarrier = new JLabel();
+        oppcruiser = new JLabel();
+        oppsubmarine = new JLabel();
+        oppdestroyer= new JLabel();
 
         oppbattleship.setHorizontalAlignment(SwingConstants.CENTER);
         oppcruiser.setHorizontalAlignment(SwingConstants.CENTER);
@@ -142,11 +154,11 @@ public class Game_Client extends JFrame{
 
         JPanel userShipsPanel = new JPanel(new GridLayout(5, 1));
         userShipsPanel.setPreferredSize(new Dimension(200, 350));
-        JLabel userbattleship = new JLabel();
-        JLabel usercarrier = new JLabel();
-        JLabel usercruiser = new JLabel();
-        JLabel usersubmarine = new JLabel();
-        JLabel userdestroyer= new JLabel();
+        userbattleship = new JLabel();
+        usercarrier = new JLabel();
+        usercruiser = new JLabel();
+        usersubmarine = new JLabel();
+        userdestroyer= new JLabel();
 
         userbattleship.setHorizontalAlignment(SwingConstants.CENTER);
         usercarrier.setHorizontalAlignment(SwingConstants.CENTER);
@@ -221,6 +233,51 @@ public class Game_Client extends JFrame{
             return "horizontal";
         }else{
             return "vertical";
+        }
+    }
+
+    private void enableAllGameComponents(){
+
+    }
+    private void enableTheGuessesBoard(){
+
+    }
+
+    private void disableAllGameComponents(){
+
+    }
+
+    private void replaceShipImageWithSunkImage(String shipName, String userOrOpponent){
+        if(shipName.toLowerCase().equals("destroyer")){
+            if(userOrOpponent.equals("u")){
+                userdestroyer.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_destroyer.png")));
+            }else{
+                oppdestroyer.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_destroyer.png")));
+            }
+        }else if(shipName.toLowerCase().equals("cruiser")){
+            if(userOrOpponent.equals("u")){
+                usercruiser.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_cruiser.png")));
+            }else{
+                oppcruiser.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_cruiser.png")));
+            }
+        }else if(shipName.toLowerCase().equals("carrier")){
+            if(userOrOpponent.equals("u")){
+                usercarrier.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_carrier.png")));
+            }else{
+                oppcarrier.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_carrier.png")));
+            }
+        }else if(shipName.toLowerCase().equals("submarine")){
+            if(userOrOpponent.equals("u")){
+                usersubmarine.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_submarine.png")));
+            }else{
+                oppsubmarine.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_submarine.png")));
+            }
+        }else{
+            if(userOrOpponent.equals("u")){
+                userbattleship.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_battleship.png")));
+            }else{
+                oppbattleship.setIcon(new ImageIcon(getClass().getResource("/game/images/sunk_battleship.png")));
+            }
         }
     }
 
