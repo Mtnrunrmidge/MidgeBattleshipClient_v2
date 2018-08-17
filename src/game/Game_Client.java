@@ -17,6 +17,7 @@ public class Game_Client extends JFrame{
     private JComboBox shipSelection;
     private JRadioButton shipVerticalBox;
     private JRadioButton shipHorizontalBox;
+    private JButton startNewGame;
 
     //main menu elements
     private JPanel mainPanel;
@@ -50,7 +51,7 @@ public class Game_Client extends JFrame{
         controlOptionsPanel.setBackground(Color.WHITE);
 
         //start button
-        JButton startNewGame = new JButton();
+        startNewGame = new JButton();
         startNewGame.setText("Start New Game");
         startNewGame.setPreferredSize(new Dimension(200, 50));
         controlOptionsPanel.add(startNewGame);
@@ -59,6 +60,7 @@ public class Game_Client extends JFrame{
             public void actionPerformed(ActionEvent event){
                 try{
                     gameHandler.requestNewGame();
+                    disableStartNewGameButton();
                 }catch(IOException e){
                     e.printStackTrace();
                 }
@@ -190,6 +192,10 @@ public class Game_Client extends JFrame{
         if(b != null)
             buttonText = b.getText();
         gameHandler.sendGuess(buttonText);
+    }
+
+    private void disableStartNewGameButton(){
+        startNewGame.setEnabled(false);
     }
 
     private void getLocationText(ActionEvent event){
