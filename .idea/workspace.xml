@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d26852ff-23e8-472a-9240-586bb10e8125" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/GameHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/GameHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game_Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game_Client.java" afterDir="false" />
     </list>
@@ -30,14 +39,24 @@
       <file leaf-file-name="Game_Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="288" column="46" lean-forward="true" selection-start-line="288" selection-start-column="46" selection-end-line="288" selection-end-column="46" />
+            <state relative-caret-position="126">
+              <caret line="229" column="23" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7547#7548#0" expanded="true" />
-                <element signature="e#7577#7578#0" expanded="true" />
-                <element signature="e#7917#7918#0" expanded="true" />
-                <element signature="e#7982#7983#0" expanded="true" />
+                <element signature="e#10620#10621#0" expanded="true" />
+                <element signature="e#10685#10686#0" expanded="true" />
+                <element signature="e#10913#10914#0" expanded="true" />
+                <element signature="e#10958#10959#0" expanded="true" />
+                <element signature="e#11004#11005#0" expanded="true" />
+                <element signature="e#11050#11051#0" expanded="true" />
+                <element signature="e#12018#12019#0" expanded="true" />
+                <element signature="e#12074#12075#0" expanded="true" />
+                <element signature="e#11578#11579#0" expanded="true" />
+                <element signature="e#11635#11636#0" expanded="true" />
+                <element signature="e#15230#15231#0" expanded="true" />
+                <element signature="e#15292#15293#0" expanded="true" />
+                <element signature="e#18185#18186#0" expanded="true" />
+                <element signature="e#18231#18232#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +65,8 @@
       <file leaf-file-name="GameHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/GameHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+            <state relative-caret-position="275">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>demo</find>
-      <find>GameHand</find>
       <find>LoginMessage</find>
       <find>shutdownconnection</find>
       <find>cg</find>
@@ -125,6 +142,27 @@
       <find>disconnect</find>
       <find>game</find>
       <find>png</find>
+      <find>startnewgame</find>
+      <find>place</find>
+      <find>handler</find>
+      <find>send</find>
+      <find>removeShipWhenPlacedFromCombobox</find>
+      <find>decrementTheShipPlacedCount</find>
+      <find>combo</find>
+      <find>ships</find>
+      <find>shipSelection</find>
+      <find>disableTheUserBoard</find>
+      <find>start</find>
+      <find>request</find>
+      <find>cruiser</find>
+      <find>getShipName</find>
+      <find>shipsToBePlacedCount</find>
+      <find>BLACK</find>
+      <find>decrementTheShipPlacedCount();</find>
+      <find>row</find>
+      <find>sendBoardToServerButton</find>
+      <find>enableTheSendBoardButton</find>
+      <find>remove</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,8 +202,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
-    <option name="y" value="23" />
+    <option name="x" value="23" />
+    <option name="y" value="110" />
     <option name="width" value="1400" />
     <option name="height" value="772" />
   </component>
@@ -275,15 +313,15 @@
       <updated>1534195359129</updated>
       <workItem from="1534195362554" duration="18949000" />
       <workItem from="1534377056819" duration="10666000" />
-      <workItem from="1534467799921" duration="3500000" />
+      <workItem from="1534467799921" duration="16544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33115000" />
+    <option name="totallyTimeSpent" value="46159000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="23" width="1400" height="772" extended-state="0" />
+    <frame x="23" y="110" width="1400" height="772" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -295,12 +333,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3288889" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3288889" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -324,7 +362,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game/Game_Client.java</url>
+          <line>230</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -344,10 +390,20 @@
           <caret line="201" column="30" selection-start-line="201" selection-start-column="20" selection-end-line="201" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7547#7548#0" expanded="true" />
-            <element signature="e#7577#7578#0" expanded="true" />
-            <element signature="e#7917#7918#0" expanded="true" />
-            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#10620#10621#0" expanded="true" />
+            <element signature="e#10685#10686#0" expanded="true" />
+            <element signature="e#10913#10914#0" expanded="true" />
+            <element signature="e#10958#10959#0" expanded="true" />
+            <element signature="e#11004#11005#0" expanded="true" />
+            <element signature="e#11050#11051#0" expanded="true" />
+            <element signature="e#12018#12019#0" expanded="true" />
+            <element signature="e#12074#12075#0" expanded="true" />
+            <element signature="e#11578#11579#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#15230#15231#0" expanded="true" />
+            <element signature="e#15292#15293#0" expanded="true" />
+            <element signature="e#18185#18186#0" expanded="true" />
+            <element signature="e#18231#18232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -460,10 +516,20 @@
           <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7547#7548#0" expanded="true" />
-            <element signature="e#7577#7578#0" expanded="true" />
-            <element signature="e#7917#7918#0" expanded="true" />
-            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#10620#10621#0" expanded="true" />
+            <element signature="e#10685#10686#0" expanded="true" />
+            <element signature="e#10913#10914#0" expanded="true" />
+            <element signature="e#10958#10959#0" expanded="true" />
+            <element signature="e#11004#11005#0" expanded="true" />
+            <element signature="e#11050#11051#0" expanded="true" />
+            <element signature="e#12018#12019#0" expanded="true" />
+            <element signature="e#12074#12075#0" expanded="true" />
+            <element signature="e#11578#11579#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#15230#15231#0" expanded="true" />
+            <element signature="e#15292#15293#0" expanded="true" />
+            <element signature="e#18185#18186#0" expanded="true" />
+            <element signature="e#18231#18232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -616,10 +682,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/GameHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        <state relative-caret-position="275">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -628,14 +701,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="288" column="46" lean-forward="true" selection-start-line="288" selection-start-column="46" selection-end-line="288" selection-end-column="46" />
+        <state relative-caret-position="126">
+          <caret line="229" column="23" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7547#7548#0" expanded="true" />
-            <element signature="e#7577#7578#0" expanded="true" />
-            <element signature="e#7917#7918#0" expanded="true" />
-            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#10620#10621#0" expanded="true" />
+            <element signature="e#10685#10686#0" expanded="true" />
+            <element signature="e#10913#10914#0" expanded="true" />
+            <element signature="e#10958#10959#0" expanded="true" />
+            <element signature="e#11004#11005#0" expanded="true" />
+            <element signature="e#11050#11051#0" expanded="true" />
+            <element signature="e#12018#12019#0" expanded="true" />
+            <element signature="e#12074#12075#0" expanded="true" />
+            <element signature="e#11578#11579#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#15230#15231#0" expanded="true" />
+            <element signature="e#15292#15293#0" expanded="true" />
+            <element signature="e#18185#18186#0" expanded="true" />
+            <element signature="e#18231#18232#0" expanded="true" />
           </folding>
         </state>
       </provider>

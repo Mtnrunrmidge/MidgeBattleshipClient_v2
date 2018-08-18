@@ -74,33 +74,6 @@ public class GameHandler {
         }
     }
 
-    public void placeShips(String shipStartingLocation, String shipOrientation, String shipName){
-        char r = shipStartingLocation.charAt(0);
-        char c = shipStartingLocation.charAt(1);
-        int row = Integer.parseInt(String.valueOf(r));
-        int col = Integer.parseInt(String.valueOf(c));
-        int shipLength = Ship.getShipLength(shipName);
-        if(shipOrientation.equals("vertical")){
-            int count = 0;
-            int actualRow = row;
-            while(count < shipLength){
-                userBoard[actualRow][col] = shipName;
-                count++;
-                actualRow++;
-            }
-        }else{
-            int count = 0;
-            int actualCol = row;
-            while(count < shipLength){
-                userBoard[row][actualCol] = shipName;
-                count++;
-                actualCol++;
-            }
-        }
-
-
-    }
-
     public void shipHasBeenSunk(String sunkenShipName){
 
     }
@@ -108,6 +81,15 @@ public class GameHandler {
     private void updateSunkenShipImage(){
 
     }
+    public void sendBoardToServerToBeginGame(String[][] board){
+        for(int row = 0; row < BOARD_SIZE; row++){
+            for(int col = 0; col < BOARD_SIZE; col++){
+                this.userBoard[row][col] = board[row][col];
+            }
+        }
+        //TODO send the board to server messageHandler.sendMessage(MessageFactory.sendBoard(board));
+    }
+
     public void sendGuess(String buttonLabel){
         char row = buttonLabel.charAt(0);
         char col = buttonLabel.charAt(1);

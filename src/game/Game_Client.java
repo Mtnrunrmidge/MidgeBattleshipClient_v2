@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.io.IOException;
+import java.util.*;
 import javax.swing.ButtonGroup;
 
 public class Game_Client extends JFrame{
@@ -18,6 +19,8 @@ public class Game_Client extends JFrame{
     private JRadioButton shipVerticalBox;
     private JRadioButton shipHorizontalBox;
     private JButton startNewGame;
+    private JButton sendBoardToServerButton;
+    private ArrayList<String> ships;
 
     private JLabel userbattleship;
     private JLabel usercarrier;
@@ -31,6 +34,8 @@ public class Game_Client extends JFrame{
     private JLabel oppsubmarine;
     private JLabel oppdestroyer;
 
+    private int shipsToBePlacedCount;
+
     //main menu elements
     private JPanel mainPanel;
 
@@ -38,7 +43,8 @@ public class Game_Client extends JFrame{
     private JPanel gameBoardsPanel;
     private JPanel guessesGrid;
     private JPanel userGrid;
-    private JButton[][] squares = new JButton[BOARD_SIZE][BOARD_SIZE];
+    private JButton[][] userSquares = new JButton[BOARD_SIZE][BOARD_SIZE];
+    private JButton[][] guessesSquares = new JButton[BOARD_SIZE][BOARD_SIZE];
 
     public Game_Client(GameHandler gh){
         gameHandler = gh;
@@ -55,6 +61,10 @@ public class Game_Client extends JFrame{
 
         setVisible(true);
         pack();
+        disableAllGamePlayControlComponents();
+        disableTheGuessesBoard();
+        disableThesendBoardButton();
+        disableTheUserBoard();
     }
 
     private void addGameControlPanel(){
@@ -71,8 +81,11 @@ public class Game_Client extends JFrame{
             @Override
             public void actionPerformed(ActionEvent event){
                 try{
-                    gameHandler.requestNewGame();
                     disableStartNewGameButton();
+                    enableAllGamePlayControlComponents();
+                    enableTheUserBoard();
+                    shipsToBePlacedCount = 5;
+                    gameHandler.requestNewGame();
                 }catch(IOException e){
                     e.printStackTrace();
                 }
@@ -81,8 +94,14 @@ public class Game_Client extends JFrame{
         });
 
         //place ships combo box options
-        String[] ships = {"Choose Ship to Place: ", "2 - Destroyer", "3 - Cruiser", "3 - Submarine", "4 - Battleship", "5 - Carrier"};
-        shipSelection = new JComboBox(ships);
+        ships = new ArrayList<>();
+        ships.add("Destroyer");
+        ships.add("Cruiser");
+        ships.add("Submarine");
+        ships.add("Battleship");
+        ships.add("Carrier");
+
+        shipSelection = new JComboBox(ships.toArray());
         controlOptionsPanel.add(shipSelection);
 
         //ship alignment horizontal and vertical options
@@ -93,6 +112,21 @@ public class Game_Client extends JFrame{
         shipVerticalBox = new JRadioButton("Vertically ");
         group.add(shipHorizontalBox);
         group.add(shipVerticalBox);
+
+        sendBoardToServerButton = new JButton();
+        sendBoardToServerButton.setText("Board Complete");
+        sendBoardToServerButton.setPreferredSize(new Dimension(200, 50));
+        controlOptionsPanel.add(sendBoardToServerButton);
+        sendBoardToServerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event){
+                disableAllGamePlayControlComponents();
+                disableThesendBoardButton();
+                enableTheGuessesBoard();
+                disableTheUserBoard();
+                sendGameBoardToServer();
+            }
+        });
 
         controlOptionsPanel.add(shipAlignmentLabel);
         controlOptionsPanel.add(shipHorizontalBox);
@@ -193,6 +227,18 @@ public class Game_Client extends JFrame{
         mainPanel.add(shipsRemainingPanel);
     }
 
+    private void removeShipWhenPlacedFromCombobox(){
+        if(shipSelection.getSelectedIndex() > -1){
+            ships.remove(shipSelection.getSelectedIndex());
+        }
+    }
+
+    private void noMoreShipsToPlace(){
+        disableAllGamePlayControlComponents();
+        enableTheSendBoardButton();
+        disableTheUserBoard();
+    }
+
     private void getText(ActionEvent event){
         Object o = event.getSource();
         JButton b = null;
@@ -206,10 +252,6 @@ public class Game_Client extends JFrame{
         gameHandler.sendGuess(buttonText);
     }
 
-    private void disableStartNewGameButton(){
-        startNewGame.setEnabled(false);
-    }
-
     private void getLocationText(ActionEvent event){
         Object o = event.getSource();
         JButton b = null;
@@ -217,12 +259,43 @@ public class Game_Client extends JFrame{
         String shipName = getShipName();
         String shipOrientation = getShipOrientation();
 
-        if(o instanceof JButton)
-            b = (JButton)o;
+        if(o instanceof JButton) {
+            b = (JButton) o;
+        }
 
-        if(b != null)
+        if(!(b.getText().equals("Destroyer") || b.getText().equals("Cruiser") || b.getText().equals("Carrier") || b.getText().equals("Submarine") || b.getText().equals("Battleship"))) {
             buttonText = b.getText();
-        gameHandler.placeShips(buttonText, shipOrientation, shipName);
+            placeShips(buttonText, shipOrientation, shipName);
+        }
+    }
+
+    public void placeShips(String shipStartingLocation, String shipOrientation, String shipName){
+        char r = shipStartingLocation.charAt(1);
+        char c = shipStartingLocation.charAt(0);
+        int row = Integer.parseInt(String.valueOf(r));
+        int col = Integer.parseInt(String.valueOf(c));
+        int shipLength = Ship.getShipLength(shipName);
+        if(shipOrientation.equals("vertical")){
+            int count = 0;
+            int actualRow = row;
+            while(count < shipLength){
+                userSquares[actualRow][col].setText(shipName);
+                userSquares[actualRow][col].setForeground(Color.BLACK);
+                count++;
+                actualRow++;
+            }
+        }else{
+            int count = 0;
+            int actualCol = col;
+            while(count < shipLength){
+                userSquares[row][actualCol].setText(shipName);
+                userSquares[row][actualCol].setForeground(Color.BLACK);
+                count++;
+                actualCol++;
+            }
+        }
+        decrementTheShipPlacedCount();
+
     }
 
     private String getShipName(){
@@ -236,15 +309,72 @@ public class Game_Client extends JFrame{
         }
     }
 
-    private void enableAllGameComponents(){
+    private void enableStartNewGameButton(){
+        startNewGame.setEnabled(true);
+    }
+    private void disableStartNewGameButton(){
+        startNewGame.setEnabled(false);
+    }
+
+    private void enableAllGamePlayControlComponents(){
+        shipSelection.setEnabled(true);
+        shipVerticalBox.setEnabled(true);
+        shipHorizontalBox.setEnabled(true);
+    }
+
+    private void disableAllGamePlayControlComponents(){
+        shipSelection.setEnabled(false);
+        shipVerticalBox.setEnabled(false);
+        shipHorizontalBox.setEnabled(false);
+    }
+
+    private void enableTheSendBoardButton(){
+        sendBoardToServerButton.setEnabled(true);
+    }
+    private void disableThesendBoardButton(){
+        sendBoardToServerButton.setEnabled(false);
+    }
+    private void enableTheUserBoard(){
+        for(int row = 0; row < 10; row++){
+            for(int col = 0; col < 10; col++){
+                userSquares[col][row].setEnabled(true);
+            }
+        }
+
+    }
+    private void disableTheUserBoard(){
+        for(int row = 0; row < 10; row++){
+            for(int col = 0; col < 10; col++){
+                userSquares[col][row].setEnabled(false);
+            }
+        }
+    }
+
+    private void disableTheGuessesBoard(){
+        for(int row = 0; row < 10; row++){
+            for(int col = 0; col < 10; col++){
+                guessesSquares[col][row].setEnabled(false);
+            }
+        }
 
     }
     private void enableTheGuessesBoard(){
+        for(int row = 0; row < 10; row++){
+            for(int col = 0; col < 10; col++){
+                guessesSquares[col][row].setEnabled(true);
+            }
+        }
 
     }
 
-    private void disableAllGameComponents(){
-
+    private void sendGameBoardToServer(){
+        String[][] board = new String[BOARD_SIZE][BOARD_SIZE];
+        for(int row = 0; row < BOARD_SIZE; row++){
+            for(int col = 0; col < BOARD_SIZE; col++){
+                board[col][row] = userSquares[col][row].getText();
+            }
+        }
+        gameHandler.sendBoardToServerToBeginGame(board);
     }
 
     private void replaceShipImageWithSunkImage(String shipName, String userOrOpponent){
@@ -292,11 +422,11 @@ public class Game_Client extends JFrame{
         //create and add board components
         for(int row = 0; row < BOARD_SIZE; row++){
             for(int col = 0; col < BOARD_SIZE; col++){
-                squares[row][col] = new JButton();
-                squares[row][col].setBackground(Color.GRAY);
-                squares[row][col].setText("" + row + col);
-                squares[row][col].setPreferredSize(new Dimension(30, 30));
-                squares[row][col].addActionListener(new ActionListener() {
+                guessesSquares[col][row] = new JButton();
+                guessesSquares[col][row].setBackground(Color.GRAY);
+                guessesSquares[col][row].setText("" + col + row);
+                guessesSquares[col][row].setPreferredSize(new Dimension(30, 30));
+                guessesSquares[col][row].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent event) {
                         getText(event);
@@ -304,26 +434,27 @@ public class Game_Client extends JFrame{
                 });
                 gbc.gridx = row;
                 gbc.gridy = col;
-                guessesGrid.add(squares[row][col], gbc);
+                guessesGrid.add(guessesSquares[col][row], gbc);
 
             }
         }
 
         for(int row = 0; row < BOARD_SIZE; row++){
             for(int col = 0; col < BOARD_SIZE; col++){
-                squares[row][col] = new JButton();
-                squares[row][col].setBackground(Color.GRAY);
-                squares[row][col].setText("" + row + col);
-                squares[row][col].setPreferredSize(new Dimension(30, 30));
-                squares[row][col].addActionListener(new ActionListener() {
+                userSquares[col][row] = new JButton();
+                userSquares[col][row].setBackground(Color.GRAY);
+                userSquares[col][row].setText("" + row + col);
+                userSquares[col][row].setPreferredSize(new Dimension(30, 30));
+                userSquares[col][row].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent event) {
                         getLocationText(event);
+                        removeShipWhenPlacedFromCombobox();
                     }
                 });
-                gbc.gridx = row + 15;
+                gbc.gridx = row;
                 gbc.gridy = col;
-                userGrid.add(squares[row][col], gbc);
+                userGrid.add(userSquares[col][row], gbc);
             }
         }
 
@@ -337,6 +468,12 @@ public class Game_Client extends JFrame{
         mainPanel.add(gameBoardsPanel);
     }
 
+    private void decrementTheShipPlacedCount(){
+        shipsToBePlacedCount--;
+        if(shipsToBePlacedCount == 0){
+            noMoreShipsToPlace();
+        }
+    }
     private void addMainPanel(){
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(1190, 1190));
