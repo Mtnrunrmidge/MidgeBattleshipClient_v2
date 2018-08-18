@@ -43,8 +43,6 @@ public class GameHandler {
 
         //send username to the server with request to begin game.
         login(username, messageHandler);
-        //TODO
-
 
         //get response from server.
     }
