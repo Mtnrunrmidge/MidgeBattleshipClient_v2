@@ -20,7 +20,7 @@ public class Main {
         //setup connection
         host = "127.0.0.1";
         InetAddress ia = InetAddress.getByName(host);
-        socket = new Socket(ia, 8088);
+        socket = new Socket(ia, 8080);
         bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         GameHandler gh = new GameHandler(socket, bufferedWriter, bufferedReader, host);
