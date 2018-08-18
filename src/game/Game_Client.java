@@ -229,7 +229,7 @@ public class Game_Client extends JFrame{
 
     private void removeShipWhenPlacedFromCombobox(){
         if(shipSelection.getSelectedIndex() > -1){
-            ships.remove(shipSelection.getSelectedIndex());
+            shipSelection.removeItemAt(shipSelection.getSelectedIndex());
         }
     }
 
