@@ -263,9 +263,19 @@ public class Game_Client extends JFrame{
             b = (JButton) o;
         }
 
+        int shipsize = Ship.getShipLength(shipName);
         if(!(b.getText().equals("Destroyer") || b.getText().equals("Cruiser") || b.getText().equals("Carrier") || b.getText().equals("Submarine") || b.getText().equals("Battleship"))) {
             buttonText = b.getText();
-            placeShips(buttonText, shipOrientation, shipName);
+            int row = Integer.parseInt(String.valueOf(buttonText.charAt(1)));
+            int col = Integer.parseInt(String.valueOf(buttonText.charAt(0)));
+            if((shipOrientation.toLowerCase().equals("vertical") && (row + shipsize) < 10) || (shipOrientation.toLowerCase().equals("horizontal") && (col + shipsize) < 10) ){
+                placeShips(buttonText, shipOrientation, shipName);
+                removeShipWhenPlacedFromCombobox();
+            }
+            else{
+                return;
+            }
+
         }
     }
 
@@ -275,6 +285,7 @@ public class Game_Client extends JFrame{
         int row = Integer.parseInt(String.valueOf(r));
         int col = Integer.parseInt(String.valueOf(c));
         int shipLength = Ship.getShipLength(shipName);
+
         if(shipOrientation.equals("vertical")){
             int count = 0;
             int actualRow = row;
@@ -449,7 +460,6 @@ public class Game_Client extends JFrame{
                     @Override
                     public void actionPerformed(ActionEvent event) {
                         getLocationText(event);
-                        removeShipWhenPlacedFromCombobox();
                     }
                 });
                 gbc.gridx = row;
