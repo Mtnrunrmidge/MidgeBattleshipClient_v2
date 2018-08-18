@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d26852ff-23e8-472a-9240-586bb10e8125" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Le_Battleship_Client/game/Game_Client.class" afterDir="false" />
-    </list>
+    <list default="true" id="d26852ff-23e8-472a-9240-586bb10e8125" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +27,8 @@
       <file leaf-file-name="Game_Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="465" column="32" lean-forward="true" selection-start-line="465" selection-start-column="32" selection-end-line="465" selection-end-column="32" />
+            <state relative-caret-position="53">
+              <caret line="461" column="47" lean-forward="true" selection-start-line="461" selection-start-column="47" selection-end-line="461" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#10620#10621#0" expanded="true" />
@@ -232,11 +224,6 @@
               <item name="MidgeBattleshipClient_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="MidgeBattleshipClient_v2" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MidgeBattleshipClient_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MidgeBattleshipClient_v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -303,15 +290,16 @@
       <updated>1534195359129</updated>
       <workItem from="1534195362554" duration="18949000" />
       <workItem from="1534377056819" duration="10666000" />
-      <workItem from="1534467799921" duration="21134000" />
+      <workItem from="1534467799921" duration="21401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50749000" />
+    <option name="totallyTimeSpent" value="51016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1400" height="772" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -700,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Game_Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="465" column="32" lean-forward="true" selection-start-line="465" selection-start-column="32" selection-end-line="465" selection-end-column="32" />
+        <state relative-caret-position="53">
+          <caret line="461" column="47" lean-forward="true" selection-start-line="461" selection-start-column="47" selection-end-line="461" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#10620#10621#0" expanded="true" />
@@ -735,7 +723,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -783,7 +770,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
